@@ -1,0 +1,86 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phone Store</title>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <img src="{% static 'images/logo.png'%}" width="5%" alt="" class="logo">
+                <h1>MeiChan</h1>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+
+                        <li class="nav-item active dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Phones</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item btn-danger" href="iphone-product.html">iPhone</a>
+                                <a class="dropdown-item btn-danger" href="samsung-product.html">Sam sung</a>
+                                <a class="dropdown-item btn-danger" href="oppo-product.html">Oppo</a>
+                                <a class="dropdown-item btn-danger" href="xiaomi-product.html">Xiaomi</a>
+                                <a class="dropdown-item btn-danger" href="nokia-product.html">Nokia</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item active dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Laptops</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item btn-danger" href="#">Mac</a>
+                                <a class="dropdown-item btn-danger" href="#">Asus</a>
+                                <a class="dropdown-item btn-danger" href="#">Dell</a>
+                                <a class="dropdown-item btn-danger" href="#">HP</a>
+                                <a class="dropdown-item btn-danger" href="#">Acer</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item active">
+                            <a href="cart.html" class="nav-link">Cart | 0</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="login-page">
+        <div class="form">
+          <form action="" method="post">
+            {% csrf_token %}
+            <input type="text" placeholder="name" name="username" required/>
+            <input type="password" placeholder="password" name="pwd" required/>
+            <input type="password" placeholder="confirm password" name="confirm_password" required/>
+            <input type="text" placeholder="email address" name="email" required/>
+            <button type="submit">cCREATE</button>
+            <p class="message">Already registered? <a href="/myapp/login">Sign In</a></p>
+          </form>
+        </div>
+        <div class="form-group">
+            {% for message in messages %}
+            <div class="alert alert-danger" role="alert">
+                {{message}}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+</html>

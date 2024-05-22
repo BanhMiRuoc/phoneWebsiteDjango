@@ -1,0 +1,85 @@
+{% load static %}
+{% load mathfilters %}
+<div id="product">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <h4>Category</h4>
+                <div>
+                    <p>Phones</p>
+                    <p>Laptops</p>
+                </div>
+                <h4>Deal hot <i class="fa-solid fa-fire"></i></h4>
+                <div class="deal-hot">
+                    <div class="fashion-grid1">
+                        <img src="{%static 'images/iphone-14-pro-max.png'%}">
+                    </div>
+                    <div class="fashion-grid2">
+                        <a class="name-product-deal-hot" href="#">iPhone 14 Pro Max 128GB | Mall VN/A</a>
+                        <span class="price-deal-hot">32.990.000 vnđ</span>
+                    </div>
+                </div>
+                <div class="devi2"></div>
+                <div class="deal-hot">
+                    <div class="fashion-grid1">
+                        <img src="{%static 'images/iPhone-13.webp'%}">
+                    </div>
+                    <div class="fashion-grid2">
+                        <a class="name-product-deal-hot" href="#">iPhone 13 Pro Max 128GB | Mall VN/A</a>
+                        <span class="price-deal-hot">27.990.000 vnđ</span>
+                    </div>
+                </div>
+                <div class="devi2"></div>
+                <div class="deal-hot">
+                    <div class="fashion-grid1">
+                        <img src="{%static 'images/samsung-z-fold-3.png'%}">
+                    </div>
+                    <div class="fashion-grid2">
+                        <a class="name-product-deal-hot" href="#">Samsung Galaxy Z Fold 3 5G (12GB | 256GB)</a>
+                        <span class="price-deal-hot">24.990.000 vnđ</span>
+                    </div>
+                </div>
+                <div class="devi2"></div>
+                <div class="deal-hot">
+                    <div class="fashion-grid1">
+                        <img src="{%static 'images/macbook-pro-16-m1-pro.png'%}">
+                    </div>
+                    <div class="fashion-grid2">
+                        <a class="name-product-deal-hot" href="#">Macbook Pro 14" M1 Pro 14-Core GPU | 16GB | 512 GB</a>
+                        <span class="price-deal-hot">24.990.000 vnđ</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9 mt-3">
+                <div class="row">
+                    {% for item in items %}
+                    <div class="col-lg-4 mt-3">
+                        <div class="card">
+                            <img class="card-img-top" src="{%static item.image%}">
+                            <div class="card-body">
+                                <h5 class="card-title name">{{item.name}}</h5>
+                                <h5 class="card-title price">{{item.price}} VND</h5>
+                                <p class="card-text">{{item.description}}</p>
+                                {% for i in '12345'|make_list%}
+                                    {% if forloop.counter0 < item.vote %}
+                                    <i class="fa-solid fa-star"></i>
+                                    {% endif %}
+                                {% endfor %}
+                                {% for i in '12345'|make_list%}
+                                    {% if forloop.counter0 < 5|sub:item.vote %}
+                                    <i class="fa-regular fa-star"></i>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <div class="card-footer">
+                                <a onclick="add({{item.id}})" class="btn btn-primary">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
