@@ -1,0 +1,61 @@
+{%extends 'base.html'%}
+{%load static%}
+{% block body %}
+<div class="cart">
+    <div class="container">
+        <h2>Cart</h2>
+    
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <td colspan="7">
+                    <a type="button" class="btn btn-primary btn-back" href="/">Continue to shopping</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <th>STT</th>
+                <th>Product name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for product in products %}
+            <tr id="{{product.id}}">
+    
+                <td><img src="{% static product.image%}" style="max-height: 50px"></td>
+                <td>{{forloop.counter0}}</td>
+                <td>{{product.name}}</td>
+                <td><input type="number" value="{{product.quantity}}" min="1" class="quantity"></td>
+                <td><p>{{product.price}} đ</p></td>
+                <td>{% widthratio product.price 1 product.quantity%} đ</td>
+                <td><button onclick="del({{product.id}})" type="button" class="btn btn-danger">Delete</button></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="7" style="text-align: right">
+                        <button type="button" class="btn btn-success" id="update">Update</button>
+                        <button type="button" class="btn btn-danger" id="pay">Purchase</button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content fs-5">
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
