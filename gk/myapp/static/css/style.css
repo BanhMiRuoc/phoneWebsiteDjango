@@ -1,0 +1,220 @@
+* {
+    font-family: "Jockey One", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* css logo and name brand*/
+    /* .container img, .container h1 {
+    }  - no css */
+/* css navbar */
+    li.nav-item {
+        margin: 0.4rem;
+    }
+    li.nav-item a {
+        font-family: monospace !important;
+        color: #172352;
+    }
+    .nav-item:hover {
+        background-color: #ffcfe591;
+        color:white !important;
+        border-radius: 15%;
+    }
+    .form-inline .form-control {
+        border-radius: 15px;
+    }
+/*css header set fixed */
+    #header {
+        color:#172352 !important;
+        background-color: #f678a6;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+    }
+/* css login form */
+    .login-page {
+            width: 360px;
+            padding: 8% 0 0;
+            margin: auto;
+
+    }
+    .login-page .form {
+        position: relative;
+        background: #FFFFFF;
+        max-width: 360px;
+        margin: 0 auto 100px;
+        padding: 45px;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
+    .login-page .form h1.login-header {
+        margin-bottom: 2rem;
+        color: #172352 !important;
+    }
+    .login-page .form label.login-form-input {
+        display: inline-block;
+        margin-bottom: .5rem;
+    }
+    .login-page .form input {
+        outline: 0;
+        background: #f4e0ea !important;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+    ::placeholder { 
+        color: #565656;
+    }
+    .login-page .form button {
+        text-transform: uppercase;
+        outline: 0;
+        background-color:#ed4b87;
+        width: 100%;
+        height: 30%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 25px;
+    }
+    .login-page .form button:hover,.login-page .form button:active,.login-page .form button:focus {
+        background: #c11b73;
+    }
+    .login-page .form p.message, .login-page .form a {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+        margin-top: 15px;
+        color: #8b8989;
+        text-decoration: none;
+        font-size: 12px;
+        text-align: center;
+    }
+    .login-page .form p a {
+        color:#e72f91;
+        font-weight: bold;
+    }
+/* css header home */
+    .navbar .logo-brands {
+        display: flex;
+        align-items: center;
+    }
+/* slider home */
+    #slider {
+        margin-top: 66px;
+    }
+    .slide .carousel-inner .carousel-item img {
+        height: 500px;
+    }
+/* css content */
+    .content {
+        text-align: center;
+    }
+    .content .content-section {
+        margin-top: 40px;
+    }
+    .content .content-section h1 {
+        color: #D70018;
+    }
+    .content .content-section img {
+        width: 250px;
+        height: 250px;
+    }
+    .content .content-section h5 {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+/* css footer */
+    #footer {
+        margin-top: 30px;
+        height: 300px;
+        background-color: #050e32;
+    }
+    #footer .container .row h6 {
+        color: #de0085;
+        font-size: 16px;
+    }
+    #footer .container .row .devi {
+        padding: 1px;
+        width: 100%;
+        background-color: #de0085;
+    }
+    #footer .container .row .text-white p {
+        color: #f4e0ea;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+/* css product  */
+    #product {
+        margin-top: 6rem;
+    }
+    #product .container .row h4 {
+        text-transform: uppercase;
+        color: #e61313;
+    }
+    #product .container .row .devi, #product .container .row .devi2 {
+        padding: 0.5px;
+        width: 100%;
+        background-color: #000000;
+    }
+    /* .row .card img {
+        width: 200px;
+        height: 200px;
+    } */
+    .row .card .card-body h5.name {
+        color:#172352;
+    }
+    .row .card .card-body h5.price {
+        color:#ff0000;
+    }
+    .row .card .card-body .card-text {
+        font-size: 15px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .row .card .card-body .fa-star {
+        color: #ffe100;
+    }
+    .row .card .footer a.btn {
+        cursor: pointer;
+    }
+/* css cart */
+    .cart {
+        margin: 100px 0;
+    }
+    .cart h2 {
+        text-transform: uppercase;
+    }
+    .fashion-grid1 {
+        float: left;
+        width: 24%;
+    }
+
+    .fashion-grid2 {
+        float: right;
+        width: 68%;
+    }
+
+    .deal-hot {
+        margin-top: 20px;
+    }
+
+    .deal-hot::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .deal-hot img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .deal-hot .price-deal-hot {
+        text-transform: uppercase;
+        color: #FF0000;
+        display: block;
+    }
+
+    .deal-hot .name-product-deal-hot {
+        color: #000;
+    }

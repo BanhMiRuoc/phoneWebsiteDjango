@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% comment %} name of website {% endcomment %}
+    <title>MeiChanPhone Store</title>
+    {% comment %} link css {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% comment %} link font family {% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Jockey+One&display=swap" rel="stylesheet">
+    {% comment %} link bootstrap {% endcomment %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="{%static 'js/index.js'%}"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="navbar navbar-expand-lg">
+
+             {% comment %} logo {% endcomment %}
+            <div class="logo-brands">
+                <img src="{% static 'images/logo.png' %}" width="10%" alt="" class="logo ">
+                <h1 >MeiChan</h1>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            {% comment %} navbar {% endcomment %}
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    {% comment %} home {% endcomment %}
+                    <li class="nav-item active">
+                        <a href="{% url 'index' %}" class="nav-link">Home</a>
+                    </li>
+                    {% comment %} phone dropdown {% endcomment %}
+                    <li class="nav-item active dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Phones</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item btn-danger" href="/myapp/iphone/">iPhone</a>
+                            <a class="dropdown-item btn-danger" href="/myapp/samsung/">Samsung</a>
+                            <a class="dropdown-item btn-danger" href="/myapp/oppo/">Oppo</a>
+                            <a class="dropdown-item btn-danger" href="/myapp/google/">Google</a>
+                            <a class="dropdown-item btn-danger" href="/myapp/nokia/">Nokia</a>
+                        </div>
+                    </li>
+                    {% comment %} laptop dropdown {% endcomment %}
+                    <li class="nav-item active dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Laptops</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item btn-danger" href="#">Mac</a>
+                            <a class="dropdown-item btn-danger" href="#">Asus</a>
+                            <a class="dropdown-item btn-danger" href="#">Dell</a>
+                            <a class="dropdown-item btn-danger" href="#">HP</a>
+                            <a class="dropdown-item btn-danger" href="#">Acer</a>
+                        </div>
+                    </li>
+                    {% comment %} shopping cart {% endcomment %}
+                    {% block account %}
+                    {% endblock %}
+                    {% comment %} logout {% endcomment %}
+                    <li class="nav-item active">
+                        <a href="/myapp/logout/" class="nav-link">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    {% block body %}
+    {% endblock %}
+    
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mt-4">
+                    <h6>MEICHAN STORE</h6>
+                    <div class="devi"></div>
+                    <div class="text-white">
+                        <p>
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            Address: 19 Đ. Nguyen Huu Tho, Tan Hung, Quan 7, Thanh pho Ho Chi Minh, Viet Nam
+                        </p>
+                        <p>
+                            <i class="fa-regular fa-mobile"></i>
+                            Hotline: 19002024
+                        </p>
+                        <p>
+                            <i class="fa-solid fa-phone"></i>
+                            Phone number: 0359514253
+                        </p>
+                        <p>
+                            <i class="fa-solid fa-envelope"></i>
+                            Email: meichan@gmail.com
+                        </p>
+                        <p>
+                            <i class="fa-brands fa-internet-explorer"></i>
+                            Website: https://cellphones.com.vn/
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-4">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.0235246987468!2d106.69758091471803!3d10.732668892351201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528b2747a81a3%3A0x33c1813055acb613!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBUw7RuIMSQ4bupYyBUaOG6r25n!5e0!3m2!1svi!2s!4v1669617597028!5m2!1svi!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

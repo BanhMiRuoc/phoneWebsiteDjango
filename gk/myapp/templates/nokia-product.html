@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block account %}
+<li class="nav-item active">
+    <a href="/myapp/cart/" class="nav-link">Cart | <span id="number_product">{{number_product}}</span></a>
+</li>
+<li class="nav-item active">
+    <a href="#" class="nav-link">Hello {{username}}</a>
+</li>
+{% endblock %}
+{% block body %}
+    {% include 'product.html' %}
+{% endblock %}
